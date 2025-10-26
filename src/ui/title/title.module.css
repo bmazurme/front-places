@@ -1,0 +1,20 @@
+.title {
+  margin: 0;
+  margin-bottom: 30px;
+  padding: 0;
+  align-self: flex-start;
+  box-sizing: border-box;
+  color: var(--color);
+  font-weight: 500;
+  font-size: 28px;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 320px) and (max-width: 899px) {
+  .title {
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

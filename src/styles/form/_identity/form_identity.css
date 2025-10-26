@@ -1,0 +1,15 @@
+.form_identity {
+  z-index: 1000;
+  background-color: var(--background-color);
+  border: 0;
+  padding: 34px;
+  width: 358px;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 320px) and (max-width: 539px) {
+  .form_identity {
+    padding: 25px 22px;
+    width: 260px;
+  }
+}

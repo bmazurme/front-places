@@ -1,0 +1,84 @@
+version: '3.7'
+services:
+  frontend:
+    image: {{ env.IMAGE_URL_FRONTEND }}
+    container_name: frontend
+    networks:
+      - internet
+    ports:
+      - 3005:80
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+  backend:
+    image: {{ env.IMAGE_URL }}
+    container_name: backend-core
+    networks:
+      - internet
+    env_file:
+      - /data/.env
+    ports:
+      - 3000:3000
+    depends_on:
+      - postgres
+      - minio
+    restart: unless-stopped
+
+  postgres:
+    image: postgres:13.2-alpine
+    container_name: postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - /postgresdata:/var/lib/postgresql/data
+      - /migrations/dbinit.sql:/docker-entrypoint-initdb.d/dbinit.sql
+    restart: always
+    env_file:
+      - /data/.env
+    networks:
+      - internet
+
+  pgadmin:
+    image: dpage/pgadmin4:4.18
+    container_name: pgadmin-4
+    restart: always
+    env_file:
+      - /data/.env
+    ports:
+      - 8080:80
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+    depends_on:
+      - postgres
+    networks:
+      - internet
+
+  minio:
+    image: cr.yandex/crpfap56bqr8nkph7d9g/minio:2024.11.7
+    container_name: minio
+    restart: always
+    env_file:
+      - /data/.env
+    ports:
+      - 9000:9000
+      - 8000:8000
+    volumes:
+      - minio-data:/bitnami/minio/data
+    networks:
+      - internet
+
+volumes:
+  postgresdata:
+    driver: local
+  pgadmin-data:
+    driver: local
+  minio-data:
+    driver: local
+
+networks:
+  internal-network:
+    driver: bridge
+    internal: true
+  internet:
+    driver: bridge

@@ -1,0 +1,81 @@
+.box {
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  composes: box;
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 10px;
+  width: 282px;
+  height: 360px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.group {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: row;
+  padding: 20px;
+  height: 78px;
+  justify-content: space-between;
+  background-color: var(--card-background-color);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  width: 100%;
+}
+
+.common {
+  background: #eee;
+  background: linear-gradient(110deg, #ececec 15%, #f5f5f5 18%, #ececec 33%);
+  background-size: 200% 100%;
+  animation: 1.5s shine linear infinite;
+}
+
+.image {
+  composes: common;
+  height: 282px;
+  max-width: 282px;
+  border-radius: 10px 10px 0 0;
+}
+
+.name {
+  composes: common;
+  height: 40px;
+  width: 180px;
+  padding: 10px;
+  font-size: 24px;
+  border-radius: 5px;
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.user {
+  composes: common;
+  padding: 5px;
+  height: 14px;
+  width: 180px;
+  border-radius: 5px;
+  margin: 0;
+}
+
+.like {
+  composes: common;
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  margin: 0;
+  margin-left: 10px;
+}
+
+.user:visited {
+  color: var(--color-in);
+}
+
+@keyframes shine {
+  to {
+    background-position-x: -200%;
+  }
+}

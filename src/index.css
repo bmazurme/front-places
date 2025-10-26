@@ -1,0 +1,12 @@
+@import "./vendor/normalize.css";
+@import "./vendor/fonts.css";
+@import "./styles/root/root.css";
+@import "./styles/page/page.css";
+
+/* form */
+@import "./styles/form/form.css";
+@import "./styles/form/_identity/form_identity.css";
+@import "./styles/errors/errors.css";
+
+/* preloader */
+@import "./styles/preloader/preloader.css";

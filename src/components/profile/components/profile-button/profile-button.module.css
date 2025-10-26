@@ -1,0 +1,31 @@
+.edit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2px;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: var(--color);
+  grid-area: button;
+  border: 1px solid var(--color);
+  margin-top: 5px;
+  margin-left: 15px;
+  background-color: var(--background-color);
+  transition: background-color var(--transition-default);
+  height: 22px;
+  width: 22px;
+}
+
+.edit:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 320px) and (max-width: 899px) {
+  .edit {
+    margin: 0;
+    padding: 2px;
+    height: 20px;
+    width: 20px;
+  }
+}

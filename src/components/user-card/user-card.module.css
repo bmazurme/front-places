@@ -1,0 +1,24 @@
+.input {
+  margin: 2px 0;
+  padding: 5px 10px;
+  max-width: 200px;
+  width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-weight: 900;
+  font-size: 22px;
+  line-height: 22px;
+  border: 0;
+  border-radius: 4px;
+  background-color: var(--card-background-color);
+  box-sizing: border-box;
+}
+
+.input:hover {
+  background-color: #e1e1e1;
+}
+
+.label {
+  display: none;
+}

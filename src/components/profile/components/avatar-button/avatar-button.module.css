@@ -1,0 +1,28 @@
+.image {
+  height: 120px;
+  width: 120px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  display: flex;
+  align-self: center;
+  background-size: cover;
+}
+
+.ibutton {
+  composes: image;
+}
+
+.ibutton:hover::before {
+  content: "";
+  height: 120px;
+  width: 120px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: rgb(0 0 0 / 80%);
+  background-image: url("../../../../images/pencil.svg");
+  background-size: 26px;
+  position: absolute;
+}

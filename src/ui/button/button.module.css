@@ -1,0 +1,13 @@
+.button {
+  padding: 0;
+  border-radius: 2px;
+  text-align: center;
+}
+
+.disabled {
+  box-sizing: border-box;
+  opacity: 0.2;
+  color: #000;
+  background: #fff;
+  pointer-events: none;
+}

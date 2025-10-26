@@ -1,0 +1,49 @@
+.item {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.link {
+  padding: 0;
+  margin: 0 0 0 10px;
+  color: var(--color);
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  opacity: 0.8;
+  transition: opacity 0.5s ease;
+}
+
+.link:hover {
+  opacity: 1;
+  color: var(--color);
+  cursor: pointer;
+}
+
+.link:visited {
+  opacity: 1;
+}
+
+.link:active {
+  opacity: 1;
+}
+
+.active {
+  opacity: 1;
+  font-weight: 500;
+}
+
+@media screen and (min-width: 479px) and (max-width: 639px) {
+  .link {
+    font-size: 14px;
+    line-height: 16px;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 479px) {
+  .item {
+    margin-bottom: 18px;
+  }
+}

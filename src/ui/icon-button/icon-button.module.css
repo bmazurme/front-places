@@ -1,0 +1,23 @@
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  align-self: center;
+  cursor: pointer;
+  margin: 0;
+  padding: 3px;
+  border-radius: 50%;
+  opacity: 0.75;
+  transition: opacity 0.5s ease;
+  background-color: var(--background-color);
+  color: var(--color);
+  border: 1px solid var(--color);
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.icon:hover {
+  opacity: 1;
+}

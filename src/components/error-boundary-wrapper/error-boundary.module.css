@@ -1,0 +1,96 @@
+.boundary {
+  margin: 60px auto;
+  padding: 34px;
+  z-index: 2;
+  background-color: #fff;
+  width: 358px;
+  min-height: 360px;
+  border: 0;
+  border-radius: 10px;
+}
+
+.title {
+  margin: 40px 0;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  color: #000;
+  align-items: flex-start;
+  text-align: center;
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  margin: 30px 0;
+  padding: 0;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15.73px;
+}
+
+.block {
+  composes: message;
+  align-items: center;
+}
+
+.link {
+  color: #000;
+  text-align: center;
+  margin: 20px auto;
+  padding: 0;
+}
+
+.button {
+  margin: 20px 0;
+  width: 150px;
+  height: 40px;
+  background-color: black;
+  border: 1px solid #000;
+  color: white;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.content {
+  margin: 0 auto;
+  max-width: 880px;
+}
+
+@media screen and (max-width: 319px) {
+  .title {
+    margin-top: 14px;
+    margin-bottom: 6px;
+    font-size: 14px;
+    line-height: 19px;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 599px) {
+  .title {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .button {
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
+
+@media screen and (min-width: 580px) and (max-width: 879px) {
+  .title {
+    align-items: flex-start;
+    text-align: center;
+  }
+}

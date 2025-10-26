@@ -1,0 +1,25 @@
+{
+  "extends": "stylelint-config-standard",
+  "plugins": [
+
+  ],
+  "rules": {
+    "at-rule-no-unknown": null,
+    "font-family-no-duplicate-names": null,
+    "selector-class-pattern": null,
+    "shorthand-property-no-redundant-values": true,
+    "declaration-block-no-redundant-longhand-properties": null,
+    "color-hex-case": "lower",
+    "property-no-unknown": [
+      true,
+      {
+        "ignoreProperties": [
+          "composes"
+        ]
+      }
+     ]
+  },
+  "ignoreFiles": [
+    "dist/*"
+  ]
+}

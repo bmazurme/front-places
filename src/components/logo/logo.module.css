@@ -1,0 +1,18 @@
+.logo {
+  align-self: center;
+  box-sizing: border-box;
+  color: var(--color);
+  font-weight: 500;
+  font-size: 32px;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 320px) and (max-width: 899px) {
+  .logo {
+    grid-area: logo;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

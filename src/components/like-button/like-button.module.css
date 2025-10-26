@@ -1,0 +1,39 @@
+.common {
+  padding: 0;
+  margin: 0;
+}
+
+.like {
+  composes: common;
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.button {
+  composes: common;
+  align-self: flex-end;
+  width: 24px;
+  height: 24px;
+  background-color: var(--card-background-color);
+  border: 0;
+}
+
+.button:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.disabled {
+  opacity: 0.3;
+}
+
+.counter {
+  composes: common;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0;
+  text-align: center;
+  color: black;
+}

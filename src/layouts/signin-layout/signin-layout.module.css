@@ -1,0 +1,32 @@
+.title {
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  color: var(--color);
+  margin: 80px auto 20px;
+}
+
+.link {
+  margin-top: 100px;
+  margin-bottom: 60px;
+  padding: 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 60vh;
+  width: 100%;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 539px) {
+  .title {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}

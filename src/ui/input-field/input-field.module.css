@@ -1,0 +1,51 @@
+.text-field {
+  height: 60px;
+}
+
+.common {
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: 400;
+}
+
+.label {
+  composes: common;
+  color: var(--color);
+  -webkit-text-fill-color: var(--color);
+}
+
+.label_error {
+  composes: common;
+  color: #f00;
+  -webkit-text-fill-color: #f00;
+}
+
+.black {
+  color: #000;
+  -webkit-text-fill-color: #000;
+}
+
+.error {
+  composes: common;
+  color: #f00;
+  -webkit-text-fill-color: #f00;
+  border-bottom: 1px solid #f00;
+}
+
+.help {
+  border: none;
+}
+
+.input {
+  outline: none;
+  padding: 0;
+  margin: 0;
+  border-bottom: 1px solid rgb(0 0 0 / 20%);
+  height: 25px;
+  width: 100%;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  font-size: 14px;
+  line-height: 17px;
+}

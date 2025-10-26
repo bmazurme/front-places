@@ -1,0 +1,36 @@
+.button {
+  border-radius: 2px;
+  background-color: var(--background-color);
+  background-repeat: no-repeat;
+  background-position: center;
+  color: var(--color);
+  width: 100%;
+  height: 50px;
+  border: var(--color) solid 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  padding: 0;
+  cursor: pointer;
+  margin: 20px 0 0;
+  transition: background-color var(--transition-default);
+}
+
+.disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.button:hover {
+  opacity: 0.6;
+}
+
+@media screen and (min-width: 320px) and (max-width: 899px) {
+  .button {
+    max-width: 282px;
+    height: 50px;
+    margin-top: 36px;
+  }
+}

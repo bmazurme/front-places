@@ -1,0 +1,91 @@
+.profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin: 40px auto 0;
+}
+
+.info {
+  align-self: center;
+  color: var(--color);
+  width: auto;
+  margin: 0 auto 0 30px;
+  display: grid;
+  gap: 0;
+  grid-template-rows: 48px 24px 24px;
+  grid-template-areas: "name button" "profession gap" "count gap";
+}
+
+.common {
+  margin: 0;
+  padding: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  color: var(--color);
+  width: 100%;
+  max-width: 326px;
+}
+
+.name {
+  composes: common;
+  grid-area: name;
+  font-weight: 500;
+  font-size: 42px;
+  line-height: 48px;
+}
+
+.profession {
+  composes: common;
+  grid-area: profession;
+  font-size: 18px;
+  line-height: 22px;
+  min-height: 22px;
+}
+
+.count {
+  composes: common;
+  grid-area: count;
+  font-size: 16px;
+  line-height: 20px;
+  min-height: 20px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 899px) {
+  .profile {
+    flex-direction: column;
+    margin-top: 42px;
+  }
+
+  .info {
+    grid-template-rows: 33px 16px;
+    grid-template-areas: "space name button" "space profession gap" "space count gap";
+    gap: 6px;
+    margin-top: 26px;
+    margin-left: auto;
+    max-width: 238px;
+  }
+
+  .name {
+    text-align: center;
+    font-size: 27px;
+    line-height: 32px;
+  }
+
+  .profession {
+    min-height: 16px;
+    font-size: 14px;
+    line-height: 16px;
+    margin-top: 0;
+    text-align: center;
+  }
+
+  .count {
+    min-height: 14px;
+    font-size: 12px;
+    line-height: 14px;
+    margin-top: 0;
+    text-align: center;
+  }
+}
