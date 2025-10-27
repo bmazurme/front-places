@@ -80,7 +80,7 @@
     "webpack": "5.102.1",
     "webpack-cli": "4.10.0",
     "webpack-dev-server": "4.9.3",
-    "webpack-merge": "5.8.0",
+    "webpack-merge": "6.0.1",
     "webpack-open-browser": "2.0.2"
   },
   "dependencies": {
