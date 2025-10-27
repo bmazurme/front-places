@@ -99,7 +99,7 @@
     "uuid": "13.0.0"
   },
   "engines": {
-    "node": "21.7.1"
+    "node": "22.18.1"
   },
   "jest": {
     "verbose": true
