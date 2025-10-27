@@ -34,7 +34,7 @@
     "@babel/register": "7.28.3",
     "@jest/globals": "29.7.0",
     "@types/dotenv-webpack": "7.0.8",
-    "@types/jest": "29.5.14",
+    "@types/jest": "30.0.0",
     "@types/react": "18.0.38",
     "@types/react-avatar-editor": "13.0.4",
     "@types/react-dom": "18.0.11",
