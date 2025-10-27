@@ -52,7 +52,7 @@
     "css-minimizer-webpack-plugin": "6.0.0",
     "cypress": "13.7.3",
     "dotenv": "16.4.7",
-    "dotenv-webpack": "8.0.1",
+    "dotenv-webpack": "8.1.1",
     "eslint": "8.32.0",
     "eslint-config-airbnb": "19.0.4",
     "eslint-plugin-import": "2.26.0",
