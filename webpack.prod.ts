@@ -76,7 +76,7 @@ const client = (env: { production?: boolean; }) => merge<Configuration & { devSe
       inject: true,
       template: './public/index.html',
       preconnect: [
-        'https://api.places.ntlstl.dev',
+        'https://core.ntlstl.dev',
       ],
     }),
     new HtmlWebpackPreconnectPlugin(),
