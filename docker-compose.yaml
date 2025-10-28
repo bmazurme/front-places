@@ -3,7 +3,7 @@ services:
   frontend:
     image: cr.yandex/crpfap56bqr8nkph7d9g/front-places:latest
     env_file:
-      - /data/.env
+      - ./.env
     ports:
       - 3005:80
     depends_on:
