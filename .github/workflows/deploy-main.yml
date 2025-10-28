@@ -34,6 +34,12 @@ jobs:
           HOST: ${{ secrets.HOST }}
 
         run: |
+          cat <<EOF > .env
+          YA_ENDPOINT=${{ secrets.YA_ENDPOINT }}
+          API_HOST=${{ secrets.API_HOST }}
+          HOST=${{ secrets.HOST }}
+          EOF
+
           docker build \
             -t "$CR_HOST/$CR_REGISTRY/$CR_IMAGE:$IMAGE_TAG" \
             -t "$CR_HOST/$CR_REGISTRY/$CR_IMAGE:latest" .
