@@ -28,7 +28,6 @@ jobs:
           CR_REGISTRY: ${{ secrets.CR_REGISTRY }}
           CR_IMAGE: ${{ secrets.CR_IMAGE }}
           IMAGE_TAG: ${{ github.sha }}
-
           YA_ENDPOINT: ${{ secrets.YA_ENDPOINT }}
           API_HOST: ${{ secrets.API_HOST }}
           HOST: ${{ secrets.HOST }}
