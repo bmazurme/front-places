@@ -1,5 +1,9 @@
 FROM node:22-alpine3.20 AS builder
 
+ENV YA_ENDPOINT=${YA_ENDPOINT}
+ENV API_HOST=${API_HOST}
+ENV HOST=${HOST}
+
 WORKDIR /app
 
 COPY package*.json ./
