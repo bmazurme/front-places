@@ -33,13 +33,13 @@ jobs:
           HOST: ${{ secrets.HOST }}
 
         run: |
-          echo YA_ENDPOINT=${{ secrets.YA_ENDPOINT }} >> .env
-          echo API_HOST=${{ secrets.API_HOST }} >> .env
-          echo HOST=${{ secrets.HOST }} >> .env
+          echo YA_ENDPOINT=${{ secrets.YA_ENDPOINT }} >> .env.production
+          echo API_HOST=${{ secrets.API_HOST }} >> .env.production
+          echo HOST=${{ secrets.HOST }} >> .env.production
 
-          docker build \
-            -t "$CR_HOST/$CR_REGISTRY/$CR_IMAGE:$IMAGE_TAG" \
-            -t "$CR_HOST/$CR_REGISTRY/$CR_IMAGE:latest" .
+          docker compose build
+          docker tag "$CR_HOST/$CR_REGISTRY/$CR_IMAGE:latest" "$CR_HOST/$CR_REGISTRY/$CR_IMAGE:$IMAGE_TAG"
+
           docker push "$CR_HOST/$CR_REGISTRY/$CR_IMAGE:$IMAGE_TAG"
           docker push "$CR_HOST/$CR_REGISTRY/$CR_IMAGE:latest"
 
