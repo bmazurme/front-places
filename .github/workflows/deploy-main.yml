@@ -29,45 +29,44 @@ jobs:
           CR_IMAGE: ${{ secrets.CR_IMAGE }}
           IMAGE_TAG: ${{ github.sha }}
 
-        run: |
-          cat <<EOF > .env
-          CLIENT_YANDEX_ID=${{ secrets.CLIENT_YANDEX_ID }}
-          CLIENT_YANDEX_SECRET=${{ secrets.CLIENT_YANDEX_SECRET }}
-          EOF
+          YA_ENDPOINT: ${{ secrets.YA_ENDPOINT }}
+          API_HOST: ${{ secrets.API_HOST }}
+          HOST: ${{ secrets.HOST }}
 
+        run: |
           docker build \
             -t "$CR_HOST/$CR_REGISTRY/$CR_IMAGE:$IMAGE_TAG" \
             -t "$CR_HOST/$CR_REGISTRY/$CR_IMAGE:latest" .
           docker push "$CR_HOST/$CR_REGISTRY/$CR_IMAGE:$IMAGE_TAG"
           docker push "$CR_HOST/$CR_REGISTRY/$CR_IMAGE:latest"
 
-  deploy:
-    needs:
-      - build
-    runs-on: ubuntu-latest
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
-      - name: Deploy COI VM
-        id: deploy-coi
-        uses: yc-actions/yc-coi-deploy@v2
-        env:
-          IMAGE_URL: cr.yandex/${{ secrets.CR_REGISTRY }}/${{ secrets.CR_IMAGE }}:${{ github.sha }}
-          SSH_KEY: ${{ secrets.SSH_KEY }}
-          YC_VM_USERNAME: ${{ secrets.YC_VM_USERNAME }}
-          YC_SECRET_ID: ${{ secrets.YC_SECRET_ID }}
-          YC_CLOUD_ID: ${{ secrets.YC_CLOUD_ID }}
-          YC_FOLDER_ID: ${{ secrets.YC_FOLDER_ID }}
-        with:
-          yc-sa-json-credentials: ${{ secrets.YC_SA_JSON_CREDENTIALS }}
-          folder-id: ${{ secrets.YC_FOLDER_ID }}
-          vm-name: ${{ secrets.YC_VM_NAME }}
-          vm-service-account-id: ${{ secrets.YC_SERVICE_ACCOUNT_ID }}
-          vm-subnet-id: ${{ secrets.YC_SUBNET_ID }}
-          vm-cores: 2
-          vm-platform-id: 'standard-v2'
-          vm-memory: 2Gb
-          vm-disk-size: 30Gb
-          vm-core-fraction: 5
-          user-data-path: './yc/user-data.yaml'
-          docker-compose-path: './yc/main/docker-compose.yaml'
+  # deploy:
+  #   needs:
+  #     - build
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+  #     - uses: actions/checkout@v3
+  #     - name: Deploy COI VM
+  #       id: deploy-coi
+  #       uses: yc-actions/yc-coi-deploy@v2
+  #       env:
+  #         IMAGE_URL: cr.yandex/${{ secrets.CR_REGISTRY }}/${{ secrets.CR_IMAGE }}:${{ github.sha }}
+  #         SSH_KEY: ${{ secrets.SSH_KEY }}
+  #         YC_VM_USERNAME: ${{ secrets.YC_VM_USERNAME }}
+  #         YC_SECRET_ID: ${{ secrets.YC_SECRET_ID }}
+  #         YC_CLOUD_ID: ${{ secrets.YC_CLOUD_ID }}
+  #         YC_FOLDER_ID: ${{ secrets.YC_FOLDER_ID }}
+  #       with:
+  #         yc-sa-json-credentials: ${{ secrets.YC_SA_JSON_CREDENTIALS }}
+  #         folder-id: ${{ secrets.YC_FOLDER_ID }}
+  #         vm-name: ${{ secrets.YC_VM_NAME }}
+  #         vm-service-account-id: ${{ secrets.YC_SERVICE_ACCOUNT_ID }}
+  #         vm-subnet-id: ${{ secrets.YC_SUBNET_ID }}
+  #         vm-cores: 2
+  #         vm-platform-id: 'standard-v2'
+  #         vm-memory: 2Gb
+  #         vm-disk-size: 30Gb
+  #         vm-core-fraction: 5
+  #         user-data-path: './yc/user-data.yaml'
+  #         docker-compose-path: './yc/main/docker-compose.yaml'
