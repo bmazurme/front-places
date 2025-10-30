@@ -22,7 +22,7 @@ export default function PlusButton({ popup, setPopup }: PlusProps) {
   const [addCard, { isLoading }] = useAddCardMutation();
   const handleOpenAddPlacePopup = () => setPopup({ ...popup, place: true });
   const handleCloseAllPopups = () => setPopup({ avatar: false, place: false });
-  // const handleAddPlaceSubmit = async (data: FormData) => {
+
   const handleAddPlaceSubmit = async (data: { name: string; link: string; tagName: string }) => {
     try {
       await addCard(data);
