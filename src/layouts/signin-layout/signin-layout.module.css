@@ -24,7 +24,7 @@
   border-radius: 10px;
 }
 
-@media screen and (min-width: 320px) and (max-width: 539px) {
+@media screen and (width >= 320px) and (width <= 539px) {
   .title {
     font-size: 20px;
     line-height: 24px;

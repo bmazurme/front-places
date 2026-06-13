@@ -52,7 +52,7 @@
   min-height: 20px;
 }
 
-@media screen and (min-width: 320px) and (max-width: 899px) {
+@media screen and (width >= 320px) and (width <= 899px) {
   .profile {
     flex-direction: column;
     margin-top: 42px;

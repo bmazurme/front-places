@@ -15,5 +15,5 @@
   font-weight: 500;
   padding: 10px 15px;
   white-space: nowrap;
-  word-wrap: break-word;
+  overflow-wrap: break-word;
 }

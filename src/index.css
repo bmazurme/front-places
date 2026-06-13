@@ -1,12 +1,15 @@
-@import "./vendor/normalize.css";
-@import "./vendor/fonts.css";
-@import "./styles/root/root.css";
-@import "./styles/page/page.css";
+@import url("./vendor/normalize.css");
+@import url("./vendor/fonts.css");
+@import url("./styles/root/root.css");
+@import url("./styles/page/page.css");
 
 /* form */
-@import "./styles/form/form.css";
-@import "./styles/form/_identity/form_identity.css";
-@import "./styles/errors/errors.css";
+@import url("./styles/form/form.css");
+@import url("./styles/form/_identity/form_identity.css");
+@import url("./styles/errors/errors.css");
 
 /* preloader */
-@import "./styles/preloader/preloader.css";
+@import url("./styles/preloader/preloader.css");
+
+/* skeleton */
+@import url("./styles/skeleton/skeleton.css");
