@@ -34,10 +34,9 @@
     "src",
     "src/*.d.ts",
     "typings/**/*.d.ts",
-    "../webpack.config.ts",
     "./node_modules/@types",
     "src/@types/*.d.ts",
-    "server",
+    "vite.config.ts"
   ],
   "exclude": [
     "**/*.js"
