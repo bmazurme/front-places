@@ -11,6 +11,7 @@ type User = {
   about: string;
   avatar: string;
   email: string;
+  count: number;
 };
 
 type Like = {
@@ -26,11 +27,13 @@ type Card = {
   count: number;
   isliked: boolean | null;
   username: string;
+  tags: string[];
 };
 
 type Tag = {
   id: number;
   name: string;
+  count: number;
 };
 
 type AvatarProps = {
