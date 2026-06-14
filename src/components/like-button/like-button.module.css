@@ -5,35 +5,40 @@
 
 .like {
   composes: common;
-  margin-top: 5px;
   display: flex;
+  flex: 0 0 auto;
   flex-direction: column;
+  align-items: center;
+  gap: 2px;
 }
 
 .button {
   composes: common;
-  align-self: flex-end;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 24px;
   height: 24px;
-  background-color: var(--card-background-color);
   border: 0;
+  background-color: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  transition: color var(--ease) 0.25s;
 }
 
 .button:hover {
-  opacity: 0.5;
-  cursor: pointer;
+  color: var(--ink);
 }
 
 .disabled {
+  cursor: default;
   opacity: 0.3;
 }
 
 .counter {
   composes: common;
-  font-size: 13px;
-  font-weight: 400;
-  line-height: 16px;
-  letter-spacing: 0;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
   text-align: center;
-  color: black;
 }

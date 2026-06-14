@@ -10,6 +10,20 @@ html {
   --menu-color-active: #000;
   --transition-default: 0.3s ease;
   --transition-scroll: smooth;
+  --mono: ui-monospace, "SF Mono", "JetBrains Mono", menlo, consolas, monospace;
+  --r: 3px;
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --paper: #faf8f3;
+  --paper2: #f1eee6;
+  --ink: #15130f;
+  --ink2: #26231d;
+  --muted: #6c6860;
+  --faint: #a39e93;
+  --line: rgb(21 19 15 / 16%);
+  --line2: rgb(21 19 15 / 7%);
+  --chip: rgb(21 19 15 / 4%);
+  --chipbd: rgb(21 19 15 / 22%);
+  --imgbd: rgb(21 19 15 / 10%);
 }
 
 html[ms-theme="dark"] {
@@ -24,6 +38,17 @@ html[ms-theme="dark"] {
   --menu-color-active: #fff;
   --transition-default: 0.3s ease;
   --transition-scroll: smooth;
+  --paper: #0b0b0c;
+  --paper2: #121214;
+  --ink: #f3f1ec;
+  --ink2: #e7e4dd;
+  --muted: #8c8a85;
+  --faint: #5b5a56;
+  --line: rgb(243 241 236 / 16%);
+  --line2: rgb(243 241 236 / 8%);
+  --chip: rgb(243 241 236 / 6%);
+  --chipbd: rgb(243 241 236 / 20%);
+  --imgbd: rgb(243 241 236 / 10%);
 }
 
 .root {

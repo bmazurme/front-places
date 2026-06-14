@@ -1,12 +1,20 @@
-.image {
-  composes: shine from global;
-  cursor: pointer;
-  height: 282px;
-  max-width: 282px;
-  width: auto;
-  border-radius: 10px 10px 0 0;
+.link {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
-.link {
-  display: flex;
+.image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  object-fit: cover;
+  filter: grayscale(0.12);
+  transition: transform 0.7s var(--ease), filter 0.4s var(--ease);
+}
+
+.link:hover .image {
+  filter: grayscale(0);
+  transform: scale(1.045);
 }

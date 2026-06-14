@@ -1,27 +1,21 @@
 .cards {
-  margin: 0;
   display: grid;
-  row-gap: 20px;
-  column-gap: 17px;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 44px 30px;
+  margin: 0;
+  padding: 28px 0;
 }
 
-@media screen and (width <= 319px) {
+@media screen and (width <= 899px) {
   .cards {
-    display: none;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px 22px;
   }
 }
 
-@media screen and (width >= 320px) and (width <= 599px) {
+@media screen and (width <= 599px) {
   .cards {
     grid-template-columns: 1fr;
-  }
-}
-
-@media screen and (width >= 580px) and (width <= 879px) {
-  .cards {
-    width: calc(282px + 282px + 20px);
-    grid-template-columns: 1fr 1fr;
+    gap: 32px;
   }
 }

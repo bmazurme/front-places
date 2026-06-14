@@ -5,45 +5,61 @@
 }
 
 .link {
-  padding: 0;
-  margin: 0 0 0 10px;
-  color: var(--color);
-  text-decoration: none;
-  font-weight: 400;
-  font-size: 18px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 0;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
   line-height: 22px;
-  opacity: 0.8;
-  transition: opacity 0.5s ease;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--muted);
+  transition: color var(--ease) 0.2s;
 }
 
-.link:hover {
-  opacity: 1;
-  color: var(--color);
-  cursor: pointer;
+.link:hover,
+.link:visited:hover {
+  color: var(--ink);
 }
 
 .link:visited {
-  opacity: 1;
+  color: var(--muted);
 }
 
-.link:active {
-  opacity: 1;
+.active,
+.active:visited {
+  color: var(--ink);
+  font-weight: 600;
 }
 
-.active {
-  opacity: 1;
-  font-weight: 500;
+.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 1.5px;
+  background-color: var(--ink);
 }
 
-@media screen and (width >= 479px) and (width <= 639px) {
-  .link {
-    font-size: 14px;
-    line-height: 16px;
-  }
-}
-
-@media screen and (width >= 320px) and (width <= 479px) {
+@media screen and (width <= 760px) {
   .item {
-    margin-bottom: 18px;
+    border-bottom: 1px solid var(--line2);
+  }
+
+  .item:last-child {
+    border-bottom: none;
+  }
+
+  .link {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 13px;
+  }
+
+  .active::after {
+    display: none;
   }
 }

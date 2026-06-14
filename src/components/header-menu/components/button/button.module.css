@@ -1,24 +1,25 @@
 .button {
   display: none;
-  height: 30px;
-  width: 30px;
-  background-color: rgb(0 0 0 / 0%);
-  align-self: center;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
   margin: 0;
   padding: 0;
-  border: 0;
-  color: var(--color);
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background-color: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  transition: background-color var(--ease) 0.2s, color var(--ease) 0.2s;
 }
 
 .button:hover {
-  opacity: 0.6;
+  background-color: var(--ink);
+  color: var(--paper);
 }
 
-@media screen and (width >= 320px) and (width <= 479px) {
-  .opened {
-    grid-area: button;
-  }
-
+@media screen and (width <= 760px) {
   .button {
     display: flex;
   }

@@ -1,9 +1,8 @@
 .button {
-  max-width: 150px;
+  composes: btn from '../../profile.module.css';
 }
 
-@media screen and (width >= 320px) and (width <= 899px) {
-  .button {
-    max-width: 282px;
-  }
+.button svg {
+  width: 15px;
+  height: 15px;
 }
