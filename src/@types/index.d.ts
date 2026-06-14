@@ -23,9 +23,9 @@ type Card = {
   id: number;
   name: string;
   link: string;
-  userid: number;
+  userId: number;
   count: number;
-  isliked: boolean | null;
+  isLiked: boolean | null;
   username: string;
   avatar: string;
   createdAt: string;

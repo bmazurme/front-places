@@ -26,7 +26,7 @@ const Card = memo(({ card, index }: CardProps) => {
   const user = useUser();
   const errorHandler = useErrorHandler();
   const [updateCard] = useUpdateCardMutation();
-  const isOwner = user?.id === card.userid;
+  const isOwner = user?.id === card.userId;
   const { register, reset, handleSubmit } = useForm<FormPayload>({
     defaultValues: { name: card.name },
   });
@@ -78,7 +78,7 @@ const Card = memo(({ card, index }: CardProps) => {
           </div>
         )}
         <div className={style.foot}>
-          <Link to={`${Urls.USER.INDEX}/${card.userid}`} className={style.user}>
+          <Link to={`${Urls.USER.INDEX}/${card.userId}`} className={style.user}>
             <span
               className={style.avatar}
               style={{ backgroundImage: `url(${BASE_API_URL}/files/avatar/${card.avatar})` }}

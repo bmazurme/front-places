@@ -53,7 +53,7 @@ export default function Slide() {
       >
         {card?.link ? (
           <img
-            src={`${BASE_API_URL}/files/${card?.link}` ?? ''}
+            src={`${BASE_API_URL}/files/${card?.link}`}
             alt={card?.name ?? ''}
             className={style.image}
             height="100%"
@@ -65,7 +65,7 @@ export default function Slide() {
         <div className={style.footer}>
           <div className={style.info}>
             <p className={classNames(style.name, { [style.loading]: isLoading })}>{card?.name ?? ''}</p>
-            <Link to={`${Urls.USERS.INDEX}/${card?.userid}`} className={style.user}>
+            <Link to={`${Urls.USERS.INDEX}/${card?.userId}`} className={style.user}>
               {card?.username}
             </Link>
           </div>

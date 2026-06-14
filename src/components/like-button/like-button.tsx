@@ -16,7 +16,7 @@ export default function LikeButton({ user, card }: ILikeProps) {
   const errorHandler = useErrorHandler();
   const [changeLike] = useChangeLikeMutation();
 
-  const onCardLike = async ({ id: cardId, isliked: value }: Card) => {
+  const onCardLike = async ({ id: cardId, isLiked: value }: Card) => {
     try {
       await changeLike({ cardId, value });
     } catch ({ status, data: { reason } }) {
@@ -34,7 +34,7 @@ export default function LikeButton({ user, card }: ILikeProps) {
         className={classNames(style.button, { [style.disabled]: !user })}
         disabled={!user}
       >
-        {card.isliked ? <BiSolidHeart size={24} /> : <BiHeart size={24} />}
+        {card.isLiked ? <BiSolidHeart size={24} /> : <BiHeart size={24} />}
       </button>
       <p className={style.counter}>{card.count}</p>
     </div>

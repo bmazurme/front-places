@@ -11,11 +11,11 @@ const initialState = {
     id: 0,
     name: 'name',
     link: 'link',
-    userid: 0,
+    userId: 0,
     count: 0,
     username: 'string',
     likes: 0,
-    isliked: true,
+    isLiked: true,
     tags: [],
   }],
 };
