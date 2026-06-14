@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useErrorHandler } from 'react-error-boundary';
 import classNames from 'classnames';
 
-import Modal from '../../../../ui/modal';
+import Modal from '../../../modal';
 import WithConfirm from '../../../with-confirm';
 import { BiSolidTrashAlt } from '../../../../utils/icons/bi';
 
@@ -40,7 +40,7 @@ export default function RemoveButton({ user, card }: IRemoveProps) {
             className={classNames(style.button)}
             onClick={() => setConfirmPopup(true)}
           >
-            <BiSolidTrashAlt size={40} />
+            <BiSolidTrashAlt />
           </button>
         )}
       {confirmPopup

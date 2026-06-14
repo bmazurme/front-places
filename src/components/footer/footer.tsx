@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 
 import { BiLogoTelegram, BiLogoLinkedin } from '../../utils/icons/bi';
 import FooterMenu from '../footer-menu';
@@ -23,12 +24,18 @@ export default function Footer() {
 
   return (
     <footer className={style.footer}>
-      <p className={style.copyright}>
-        &copy;
-        {` ${getYear} mesto by `}
-        <a className={style.link} href="https://ntlstl.dev/">ntlstl</a>
-      </p>
-      <FooterMenu links={links} />
+      <div className={style.row}>
+        <span className={style.label}>
+          [ntlstl
+          <b>.places</b>
+          ] — a personal index of places
+        </span>
+        <FooterMenu links={links} />
+        <span className={classNames(style.label, style.mono)}>
+          &copy;
+          {` ${getYear}`}
+        </span>
+      </div>
     </footer>
   );
 }

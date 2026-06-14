@@ -1,7 +1,7 @@
 import React, { memo, PropsWithChildren } from 'react';
 import classNames from 'classnames';
 
-import { Title } from '../../ui';
+import { Title } from '..';
 
 import style from './board.module.css';
 

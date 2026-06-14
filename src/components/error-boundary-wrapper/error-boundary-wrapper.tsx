@@ -5,7 +5,7 @@ import { ErrorBoundary, type FallbackProps } from 'react-error-boundary';
 import classNames from 'classnames';
 
 import Content from '../content';
-import Button from '../../ui/button';
+import Button from '../button';
 
 import style from './error-boundary.module.css';
 
