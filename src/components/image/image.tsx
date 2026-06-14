@@ -21,8 +21,6 @@ export default function Image({ card, index }: { card: Card; index: number; }) {
         src={`${BASE_API_URL}/files/covers/${card.link}`}
         aria-hidden="true"
         loading={index > 6 ? 'lazy' : 'eager'}
-        height="282px"
-        width="282px"
       />
     </Link>
   );

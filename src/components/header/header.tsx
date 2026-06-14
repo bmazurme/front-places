@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import classNames from 'classnames';
 
 import Logo from '../logo';
 import Navbar from '../header-menu';
@@ -10,9 +9,11 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className={classNames(style.header, { [style.opened]: isOpen })}>
-      <Logo />
-      <Navbar handlerClick={() => setIsOpen(!isOpen)} isOpen={isOpen} />
+    <header className={style.header}>
+      <div className={style.row}>
+        <Logo />
+        <Navbar handlerClick={() => setIsOpen(!isOpen)} isOpen={isOpen} />
+      </div>
     </header>
   );
 }
