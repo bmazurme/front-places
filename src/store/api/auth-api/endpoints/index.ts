@@ -1,5 +1,15 @@
 import oauthApi from '..';
 
+type RefreshResponse = {
+  accessToken: string;
+  expiresIn: number;
+};
+
+type CheckAuthResponse = {
+  accessToken: string;
+  isAuthenticated: boolean;
+};
+
 const authApiEndpoints = oauthApi
   .enhanceEndpoints({
     addTagTypes: ['User'],
@@ -13,6 +23,20 @@ const authApiEndpoints = oauthApi
           body,
         }),
       }),
+      refresh: builder.mutation<RefreshResponse, void>({
+        query: () => ({
+          url: '/auth/refresh',
+          method: 'POST',
+        }),
+      }),
+      checkAuth: builder.query<CheckAuthResponse, void>({
+        query: () => ({
+          url: '/auth/check',
+          method: 'GET',
+        }),
+        providesTags: ['User'],
+        keepUnusedDataFor: 0,
+      }),
       signOut: builder.mutation<void, void>({
         query: () => ({
           url: '/auth/logout',
@@ -22,5 +46,10 @@ const authApiEndpoints = oauthApi
     }),
   });
 
-export const { useSignOutMutation, useSignInWitOauthYaMutation } = authApiEndpoints;
+export const {
+  useSignOutMutation,
+  useSignInWitOauthYaMutation,
+  useRefreshMutation,
+  useCheckAuthQuery,
+} = authApiEndpoints;
 export { authApiEndpoints };

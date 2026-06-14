@@ -1,18 +1,13 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
+
+import { useAppDispatch, useAppSelector } from './index';
+import { themeSelector, toggleTheme } from '../store';
 
 export default function useDarkTheme() {
-  const currentTheme = localStorage.getItem('ms-theme');
-  const condition = currentTheme === 'dark' ? 'dark' : 'light';
-  const [isDark, setIsDark] = useState(condition);
+  const dispatch = useAppDispatch();
+  const { isDark } = useAppSelector(themeSelector);
 
-  const toggleIsDark = () => {
-    setIsDark(isDark === 'light' ? 'dark' : 'light');
-    localStorage.setItem('ms-theme', isDark === 'light' ? 'dark' : 'light');
-  };
+  useEffect(() => document.documentElement.setAttribute('ms-theme', isDark), [isDark]);
 
-  const providerValue = { isDark, toggleIsDark };
-
-  useEffect(() => document.documentElement.setAttribute('ms-theme', condition), [isDark]);
-
-  return { providerValue };
+  return { providerValue: { isDark, toggleIsDark: () => dispatch(toggleTheme()) } };
 }

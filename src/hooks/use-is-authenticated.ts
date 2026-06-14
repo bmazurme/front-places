@@ -1,10 +1,11 @@
-import useUser from './use-user';
+import { useAppSelector } from './index';
+import { authSelector } from '../store';
 
 export const useIsAuthenticated = () => {
-  const user = useUser();
+  const { isAuthenticated, status } = useAppSelector(authSelector);
 
   return {
-    isAuthenticated: Boolean(user?.email),
-    isChecking: false,
+    isAuthenticated,
+    isChecking: status === 'checking',
   };
 };

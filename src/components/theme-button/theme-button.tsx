@@ -1,13 +1,13 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
-import React, { useContext } from 'react';
+import React from 'react';
 import { BiMoon, BiSun } from '../../utils/icons/bi';
 
-import ThemeContext from '../../context/theme-context';
+import useDarkTheme from '../../hooks/use-dark-theme';
 
 import style from './theme-button.module.css';
 
 export default function ThemeButton() {
-  const { isDark, toggleIsDark } = useContext(ThemeContext);
+  const { providerValue: { isDark, toggleIsDark } } = useDarkTheme();
 
   return (
     <button

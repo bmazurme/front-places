@@ -10,7 +10,8 @@ import ProtectedWrapper from '../protected-wrapper';
 
 import { useUpdateCardMutation } from '../../store';
 import useUser from '../../hooks/use-user';
-import { Urls } from '../../utils/constants';
+import { formatDate } from '../../utils/format-date';
+import { BASE_API_URL, Urls } from '../../utils/constants';
 
 import style from './card.module.css';
 
@@ -78,8 +79,13 @@ const Card = memo(({ card, index }: CardProps) => {
         )}
         <div className={style.foot}>
           <Link to={`${Urls.USER.INDEX}/${card.userid}`} className={style.user}>
+            <span
+              className={style.avatar}
+              style={{ backgroundImage: `url(${BASE_API_URL}/files/avatar/${card.avatar})` }}
+            />
             {card.username}
           </Link>
+          <span className={style.date}>{formatDate(card.createdAt)}</span>
         </div>
       </div>
     </article>

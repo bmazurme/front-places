@@ -11,6 +11,8 @@ import {
   filesApi,
   tagsApi,
 } from './api';
+import authReducer from './slices/auth-slice';
+import themeReducer from './slices/theme-slice';
 import userReducer from './slices/user-slice';
 import usersReducer from './slices/users-slice';
 import cardReducer from './slices/card-slice';
@@ -40,6 +42,8 @@ export const store = configureStore({
   reducer: {
     // router: routerReducer,
     // Add the generated reducer as a specific top-level slice
+    auth: authReducer,
+    theme: themeReducer,
     user: userReducer,
     users: usersReducer,
     card: cardReducer,

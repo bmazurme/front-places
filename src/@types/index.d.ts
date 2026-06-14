@@ -27,6 +27,8 @@ type Card = {
   count: number;
   isliked: boolean | null;
   username: string;
+  avatar: string;
+  createdAt: string;
   tags: string[];
 };
 

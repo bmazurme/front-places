@@ -114,6 +114,9 @@
 }
 
 .user {
+  display: flex;
+  align-items: center;
+  gap: 7px;
   font-family: var(--mono);
   font-size: 11px;
   letter-spacing: 0.03em;
@@ -127,4 +130,20 @@
 
 .user:visited {
   color: var(--muted);
+}
+
+.avatar {
+  flex: 0 0 auto;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background-position: center;
+  background-size: cover;
+}
+
+.date {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.04em;
+  color: var(--faint);
 }

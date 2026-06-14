@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 
 import { useAppLocation } from './hooks/use-app-location';
 import { ThemeProvider } from './providers';
+import ContentWrapper from './components/content-wrapper';
 import ErrorBoundaryWrapper from './components/error-boundary-wrapper';
 import { Urls } from './utils/constants';
 
@@ -23,26 +24,28 @@ export default function App() {
 
   return (
     <ThemeProvider>
-      <ErrorBoundaryWrapper>
-        <Suspense>
-          <Routes location={background || location}>
-            <Route path={Urls.BASE} element={(<MainPage />)} />
-            <Route path={Urls.CARDS.CURRENT} element={(<CardPage />)} />
-            <Route path={Urls.SIGNIN} element={(<SignInPage />)} />
-            <Route path={Urls.TAGS.INDEX} element={(<TagsPage />)} />
-            <Route path={Urls.TAGS.CURRENT} element={(<TagPage />)} />
-            <Route path={Urls.USERS.INDEX} element={(<UsersPage />)} />
-            <Route path={Urls.USERS.CURRENT} element={(<UserPage />)} />
-            <Route path={Urls[404]} element={(<NotFoundPage />)} />
-          </Routes>
-          {background && (
-          <Routes>
-            <Route path={Urls.USERS.CURRENT_EDIT} element={(<UserEditModalPage />)} />
-            <Route path={Urls.CARDS.CURRENT} element={(<CardModalPage />)} />
-          </Routes>
-          )}
-        </Suspense>
-      </ErrorBoundaryWrapper>
+      <ContentWrapper>
+        <ErrorBoundaryWrapper>
+          <Suspense>
+            <Routes location={background || location}>
+              <Route path={Urls.BASE} element={(<MainPage />)} />
+              <Route path={Urls.CARDS.CURRENT} element={(<CardPage />)} />
+              <Route path={Urls.SIGNIN} element={(<SignInPage />)} />
+              <Route path={Urls.TAGS.INDEX} element={(<TagsPage />)} />
+              <Route path={Urls.TAGS.CURRENT} element={(<TagPage />)} />
+              <Route path={Urls.USERS.INDEX} element={(<UsersPage />)} />
+              <Route path={Urls.USERS.CURRENT} element={(<UserPage />)} />
+              <Route path={Urls[404]} element={(<NotFoundPage />)} />
+            </Routes>
+            {background && (
+              <Routes>
+                <Route path={Urls.USERS.CURRENT_EDIT} element={(<UserEditModalPage />)} />
+                <Route path={Urls.CARDS.CURRENT} element={(<CardModalPage />)} />
+              </Routes>
+            )}
+          </Suspense>
+        </ErrorBoundaryWrapper>
+      </ContentWrapper>
     </ThemeProvider>
   );
 }

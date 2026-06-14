@@ -1,11 +1,10 @@
 import React, { useEffect, type ComponentType } from 'react';
 import { Navigate } from 'react-router-dom';
-import { useErrorHandler } from 'react-error-boundary';
-import { FetchBaseQueryError } from '@reduxjs/toolkit/query';
 
 import { Preloader } from '../components';
 
 import useUser from '../hooks/use-user';
+import { useIsAuthenticated } from '../hooks/use-is-authenticated';
 import { useAppLocation } from '../hooks/use-app-location';
 import { useGetUserMeMutation } from '../store';
 
@@ -15,39 +14,32 @@ export default function withUser<P extends Record<string, unknown>>(
 ) {
   return function WithUser(pageProps: P & { user?: User }) {
     const location = useAppLocation();
-    const handleErrors = useErrorHandler();
-    let userData: User | null = useUser();
-    const [getUser, {
-      isUninitialized,
-      isLoading,
-      isError,
-      error,
-      data,
-    }] = useGetUserMeMutation();
+    const { isAuthenticated, isChecking } = useIsAuthenticated();
+    const userData: User | null = useUser();
+    const [getUser] = useGetUserMeMutation();
 
     useEffect(() => {
-      if (isUninitialized && !userData) {
-        getUser().then(() => {
-          if (data && !isError) userData = data as unknown as User;
-        });
+      if (isAuthenticated && !userData) {
+        getUser();
       }
-    }, [getUser, isError, isLoading, isUninitialized, userData]);
+    }, [getUser, isAuthenticated, userData]);
 
-    if (isLoading || (isUninitialized && !userData)) {
+    if (isChecking) {
       return <Preloader />;
     }
 
-    if (userData || !shouldBeAuthorized) {
-      const pagePropsWithUser = { ...pageProps, user: userData };
-      pagePropsWithUser.user = userData;
-      return <Page {...pagePropsWithUser} />;
+    if (!isAuthenticated) {
+      if (shouldBeAuthorized) {
+        return <Navigate to="/signin" state={{ from: location.pathname }} />;
+      }
+
+      return <Page {...pageProps} />;
     }
 
-    if (isError && (error as FetchBaseQueryError)?.status !== 401 && !shouldBeAuthorized) {
-      handleErrors(error);
-      return <div>Something went wrong</div>;
+    if (!userData) {
+      return <Preloader />;
     }
 
-    return <Navigate to="/signin" state={{ from: location.pathname }} />;
+    return <Page {...pageProps} user={userData} />;
   };
 }

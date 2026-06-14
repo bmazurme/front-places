@@ -1,9 +1,9 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import Board from '../../components/board';
 import useUser from '../../hooks/use-user';
-import ThemeContext from '../../context/theme-context';
+import useDarkTheme from '../../hooks/use-dark-theme';
 
 import yaOauth from '../../images/ya-oauth.svg';
 import yaOauthWhite from '../../images/ya-oauth-white.svg';
@@ -13,7 +13,7 @@ import { YA_ENDPOINT } from '../../utils/constants';
 import style from './signin-layout.module.css';
 
 export default function SigninLayout() {
-  const { isDark } = useContext(ThemeContext);
+  const { providerValue: { isDark } } = useDarkTheme();
   const navigate = useNavigate();
   const userData = useUser();
 
