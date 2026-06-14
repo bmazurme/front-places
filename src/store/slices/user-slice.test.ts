@@ -13,6 +13,7 @@ const initialState = {
     about: 'about',
     avatar: 'avatar',
     email: 'email',
+    count: 0,
   },
 };
 

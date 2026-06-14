@@ -3,7 +3,7 @@ import { Navigate } from 'react-router-dom';
 import { useErrorHandler } from 'react-error-boundary';
 import { FetchBaseQueryError } from '@reduxjs/toolkit/query';
 
-import { Preloader } from '../ui';
+import { Preloader } from '../components';
 
 import useUser from '../hooks/use-user';
 import { useAppLocation } from '../hooks/use-app-location';

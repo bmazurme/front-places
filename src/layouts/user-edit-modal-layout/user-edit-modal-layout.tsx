@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { useErrorHandler } from 'react-error-boundary';
 
 import { Urls } from '../../utils/constants';
-import Modal from '../../ui/modal';
+import Modal from '../../components/modal';
 import EditProfile from '../../components/profile/components/edit-profile';
 
 import { useUpdateUserMutation } from '../../store';

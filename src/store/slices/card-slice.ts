@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
+import { authApiEndpoints } from '../api/auth-api/endpoints';
 import type { RootState } from '..';
 
 export type CardState = {
@@ -19,6 +20,12 @@ const slice = createSlice({
       state,
       { payload: data }: PayloadAction<Card | null>,
     ) => ({ ...state, data }),
+  },
+  extraReducers: (builder) => {
+    builder.addMatcher(
+      authApiEndpoints.endpoints.signOut.matchFulfilled,
+      () => initialStateCard,
+    );
   },
 });
 

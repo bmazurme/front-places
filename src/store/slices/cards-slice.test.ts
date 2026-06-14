@@ -16,6 +16,7 @@ const initialState = {
     username: 'string',
     likes: 0,
     isliked: true,
+    tags: [],
   }],
 };
 

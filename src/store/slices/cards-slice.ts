@@ -2,6 +2,7 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 import { cardsApiEndpoints } from '../api/card-api/endpoints';
+import { authApiEndpoints } from '../api/auth-api/endpoints';
 import type { RootState } from '..';
 
 export type CardsState = { data: Card[] };
@@ -23,54 +24,19 @@ const slice = createSlice({
         (state, action) => ({ ...state, data: [...state.data, ...action.payload] }),
       )
       .addMatcher(
-        cardsApiEndpoints.endpoints.getCardsByPage.matchRejected,
-        (state, action) => {
-          if (action.error.name !== 'ConditionError') {
-            console.log('rejected', action);
-          }
-        },
-      )
-      .addMatcher(
         cardsApiEndpoints.endpoints.getCardsByUser.matchFulfilled,
         (state, action) => ({ ...state, data: [...state.data, ...action.payload] }),
-      )
-      .addMatcher(
-        cardsApiEndpoints.endpoints.getCardsByUser.matchRejected,
-        (state, action) => {
-          if (action.error.name !== 'ConditionError') {
-            console.log('rejected', action);
-          }
-        },
       )
       .addMatcher(
         cardsApiEndpoints.endpoints.getCardsByTag.matchFulfilled,
         (state, action) => ({ ...state, data: [...state.data, ...action.payload] }),
       )
       .addMatcher(
-        cardsApiEndpoints.endpoints.getCardsByTag.matchRejected,
-        (state, action) => {
-          if (action.error.name !== 'ConditionError') {
-            console.log('rejected', action);
-          }
-        },
-      )
-      .addMatcher(
         cardsApiEndpoints.endpoints.deleteCard.matchFulfilled,
-        (state, action) => {
-          console.log(action);
-          return {
-            ...state,
-            data: state.data.filter((c) => c.id !== Number(action.payload.id)),
-          };
-        },
-      )
-      .addMatcher(
-        cardsApiEndpoints.endpoints.deleteCard.matchRejected,
-        (state, action) => {
-          if (action.error.name !== 'ConditionError') {
-            console.log('rejected', action);
-          }
-        },
+        (state, action) => ({
+          ...state,
+          data: state.data.filter((c) => c.id !== Number(action.payload.id)),
+        }),
       )
       .addMatcher(
         cardsApiEndpoints.endpoints.addCard.matchFulfilled,
@@ -80,15 +46,6 @@ const slice = createSlice({
         }),
       )
       .addMatcher(
-        cardsApiEndpoints.endpoints.addCard.matchRejected,
-        (state, action) => {
-          if (action.error.name !== 'ConditionError') {
-            console.log('rejected', action);
-          }
-        },
-      )
-
-      .addMatcher(
         cardsApiEndpoints.endpoints.changeLike.matchFulfilled,
         (state, action) => ({
           ...state,
@@ -96,12 +53,8 @@ const slice = createSlice({
         }),
       )
       .addMatcher(
-        cardsApiEndpoints.endpoints.changeLike.matchRejected,
-        (state, action) => {
-          if (action.error.name !== 'ConditionError') {
-            console.log('rejected', action);
-          }
-        },
+        authApiEndpoints.endpoints.signOut.matchFulfilled,
+        () => initialStateCards,
       );
   },
 });

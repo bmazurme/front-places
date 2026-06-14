@@ -12,8 +12,15 @@ const tagsApiEndpoints = tagsApi
         }),
         providesTags: ['Tags'],
       }),
+      getTagsCount: builder.query<{ count: number; }, string>({
+        query: (userId) => ({
+          url: `/tags/count/${userId}`,
+          method: 'GET',
+        }),
+        providesTags: ['Tags'],
+      }),
     }),
   });
 
-export const { useGetTagsQuery } = tagsApiEndpoints;
+export const { useGetTagsQuery, useGetTagsCountQuery } = tagsApiEndpoints;
 export { tagsApiEndpoints };

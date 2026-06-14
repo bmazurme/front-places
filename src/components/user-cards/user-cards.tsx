@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import InfiniteScroll from 'react-infinite-scroller';
 
-import Card from '../user-card';
+import Card from '../card';
 import CardLoader from '../card-loader';
 
 import style from '../cards/cards.module.css';

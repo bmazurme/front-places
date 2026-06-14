@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import Modal from '../../ui/modal';
+import Modal from '../../components/modal';
 import Slide from '../../components/slide';
 
 import { setCard } from '../../store';

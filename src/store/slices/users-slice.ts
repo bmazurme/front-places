@@ -2,6 +2,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 import { usersApiEndpoints } from '../api/user-api/endpoints';
+import { authApiEndpoints } from '../api/auth-api/endpoints';
 import type { RootState } from '..';
 
 export type UsersState = {
@@ -23,12 +24,8 @@ const slice = createSlice({
         (state, action) => ({ ...state, data: action.payload }),
       )
       .addMatcher(
-        usersApiEndpoints.endpoints.getUsers.matchRejected,
-        (state, action) => {
-          if (action.error.name !== 'ConditionError') {
-            console.log('rejected', action);
-          }
-        },
+        authApiEndpoints.endpoints.signOut.matchFulfilled,
+        () => initialStateUsers,
       );
   },
 });

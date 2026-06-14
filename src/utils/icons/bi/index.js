@@ -119,3 +119,28 @@ export function BiSolidHeart(props) {
     child: [{ tag: 'path', attr: { d: 'M20.205 4.791a5.938 5.938 0 0 0-4.209-1.754A5.906 5.906 0 0 0 12 4.595a5.904 5.904 0 0 0-3.996-1.558 5.942 5.942 0 0 0-4.213 1.758c-2.353 2.363-2.352 6.059.002 8.412L12 21.414l8.207-8.207c2.354-2.353 2.355-6.049-.002-8.416z' }, child: [] }],
   })(props);
 }
+export function BiArrowRight(props) {
+  return GenIcon({
+    tag: 'svg',
+    attr: {
+      viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: '1.7', strokeLinecap: 'round', strokeLinejoin: 'round',
+    },
+    child: [{ tag: 'path', attr: { d: 'M5 12h14M13 6l6 6-6 6' }, child: [] }],
+  })(props);
+}
+export function BiMapPin(props) {
+  return GenIcon({
+    tag: 'svg',
+    attr: { viewBox: '0 0 24 24' },
+    child: [{ tag: 'path', attr: { d: 'M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z' }, child: [] }],
+  })(props);
+}
+export function BiLogOut(props) {
+  return GenIcon({
+    tag: 'svg',
+    attr: {
+      viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: '1.7', strokeLinecap: 'round', strokeLinejoin: 'round',
+    },
+    child: [{ tag: 'path', attr: { d: 'M15 4h4v16h-4M11 8l4 4-4 4M15 12H3' }, child: [] }],
+  })(props);
+}

@@ -15,6 +15,7 @@ const initialState = {
     count: 1,
     isliked: false,
     username: 'string',
+    tags: [],
   },
 };
 

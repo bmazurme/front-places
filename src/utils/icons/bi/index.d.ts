@@ -16,3 +16,6 @@ export declare const BiMoon: IconType;
 export declare const BiPencil: IconType;
 export declare const BiMenu: IconType;
 export declare const BiX: IconType;
+export declare const BiArrowRight: IconType;
+export declare const BiMapPin: IconType;
+export declare const BiLogOut: IconType;

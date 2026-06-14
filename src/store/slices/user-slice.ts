@@ -23,34 +23,17 @@ const slice = createSlice({
         usersApiEndpoints.endpoints.getUserMe.matchFulfilled,
         (state, action) => ({ ...state, data: action.payload }),
       )
-      // .addMatcher(
-      //   usersApiEndpoints.endpoints.getUserMe.matchRejected,
-      //   (state, action) => console.log('rejected', action),
-      // )
       .addMatcher(
         usersApiEndpoints.endpoints.updateUser.matchFulfilled,
         (state, action) => ({ ...state, data: action.payload }),
-      )
-      .addMatcher(
-        usersApiEndpoints.endpoints.updateUser.matchRejected,
-        (state, action) => console.log('rejected', action),
       )
       .addMatcher(
         usersApiEndpoints.endpoints.updateUserAvatar.matchFulfilled,
         (state, action) => ({ ...state, data: action.payload }),
       )
       .addMatcher(
-        usersApiEndpoints.endpoints.updateUserAvatar.matchRejected,
-        (state, action) => console.log('rejected', action),
-      )
-      .addMatcher(
         authApiEndpoints.endpoints.signOut.matchFulfilled,
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        (state, action) => ({ ...state, data: null }),
-      )
-      .addMatcher(
-        authApiEndpoints.endpoints.signOut.matchRejected,
-        (state, action) => console.log('rejected', action),
+        () => initialStateUser,
       );
   },
 });
