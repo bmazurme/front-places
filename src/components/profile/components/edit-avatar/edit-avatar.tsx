@@ -7,9 +7,9 @@ import {
   BiRotateLeft, BiRotateRight, BiPlus, BiMinus,
 } from '../../../../utils/icons/bi';
 
-import UploadAvatarButton from '../../../../ui/upload-avatar-button';
-import IconButton from '../../../../ui/icon-button';
-import Button from '../../../../ui/button';
+import UploadAvatarButton from '../../../upload-avatar-button';
+import IconButton from '../../../icon-button';
+import Button from '../../../button';
 
 import { BASE_API_URL } from '../../../../utils/constants';
 

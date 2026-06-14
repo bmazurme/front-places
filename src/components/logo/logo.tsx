@@ -6,7 +6,9 @@ import style from './logo.module.css';
 export default function Logo() {
   return (
     <Link className={style.logo} to="/">
-      [ntlstl.places]
+      [ntlstl
+      <b>.places</b>
+      ]
     </Link>
   );
 }

@@ -17,7 +17,8 @@ export default function ProfileButton({ info }: ProfileProps) {
       state={{ pathname }}
       className={style.edit}
     >
-      <BiPencil size={14} />
+      <BiPencil size={15} />
+      Edit profile
     </Link>
   );
 }

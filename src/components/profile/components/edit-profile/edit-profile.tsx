@@ -2,8 +2,8 @@ import React from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { useErrorHandler } from 'react-error-boundary';
 
-import Button from '../../../../ui/button';
-import InputField from '../../../../ui/input-field';
+import Button from '../../../button';
+import InputField from '../../../input-field';
 
 type FormPayload = {
   name: string;

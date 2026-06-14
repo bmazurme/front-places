@@ -1,7 +1,7 @@
 import React from 'react';
 import { useErrorHandler } from 'react-error-boundary';
 
-import Modal from '../../../../ui/modal';
+import Modal from '../../../modal';
 import EditAvatar from '../edit-avatar';
 import { useUpdateUserAvatarMutation } from '../../../../store';
 

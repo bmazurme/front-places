@@ -7,7 +7,7 @@ import { FetchBaseQueryError } from '@reduxjs/toolkit/dist/query';
 import { SerializedError } from '@reduxjs/toolkit';
 import classNames from 'classnames';
 
-import IconButton from '../../ui/icon-button';
+import IconButton from '../icon-button';
 import { BiLogoTelegram } from '../../utils/icons/bi';
 import { useGetCardByIdMutation } from '../../store';
 import { MODAL_CONFIG } from '../../utils';
