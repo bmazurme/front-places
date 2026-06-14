@@ -10,6 +10,7 @@ export declare const BiPlus: IconType;
 export declare const BiMinus: IconType;
 export declare const BiLogoLinkedin: IconType;
 export declare const BiLogoTelegram: IconType;
+export declare const BiLogoGithub: IconType;
 export declare const BiSolidTrashAlt: IconType;
 export declare const BiSun: IconType;
 export declare const BiMoon: IconType;

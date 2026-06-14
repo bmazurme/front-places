@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 
-import { BiLogoTelegram, BiLogoLinkedin } from '../../utils/icons/bi';
+import { BiLogoGithub, BiLogoLinkedin } from '../../utils/icons/bi';
 import FooterMenu from '../footer-menu';
 import { getCurrentYear } from '../../utils/get-current-year';
 
@@ -11,9 +11,9 @@ export default function Footer() {
   const getYear = getCurrentYear();
   const links = [
     {
-      icon: BiLogoTelegram,
-      label: 'Telegram',
-      url: 'https://t.me/ntlstl',
+      icon: BiLogoGithub,
+      label: 'GitHub',
+      url: 'https://github.com/bmazurme',
     },
     {
       icon: BiLogoLinkedin,
