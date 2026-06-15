@@ -9,6 +9,7 @@ export const inputs = [
     label: 'Name',
     pattern: VALUE_PATTERN,
     required: true,
+    type: 'text',
     autoComplete: 'current-name',
   },
   {

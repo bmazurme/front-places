@@ -36,6 +36,7 @@ export default function UserEditModalLayout() {
           isLoading={isLoading}
           info={user}
           onUpdateUser={handleUpdateUserSubmit}
+          onClose={handleClose}
         />
       )}
     />
