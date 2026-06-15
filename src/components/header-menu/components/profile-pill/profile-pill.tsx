@@ -107,7 +107,11 @@ export default function ProfilePill() {
       )}
       {isAddPlaceOpen && (
         <Modal onClose={() => setIsAddPlaceOpen(false)}>
-          <AddCard isLoading={isLoading} onAddPlace={handleAddPlaceSubmit} />
+          <AddCard
+            isLoading={isLoading}
+            onAddPlace={handleAddPlaceSubmit}
+            onClose={() => setIsAddPlaceOpen(false)}
+          />
         </Modal>
       )}
     </div>
