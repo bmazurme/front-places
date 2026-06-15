@@ -1,0 +1,206 @@
+.form {
+  width: 100%;
+  max-width: 560px;
+  background-color: var(--paper);
+  border: 1px solid var(--ink);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.head {
+  padding: 26px 28px 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.title {
+  margin: 8px 0 0;
+  font-size: 28px;
+  color: var(--ink);
+}
+
+.body {
+  padding: 24px 28px 8px;
+}
+
+.photo {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.preview {
+  width: 120px;
+  height: 120px;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed var(--chipbd);
+  border-radius: var(--r);
+  background-color: var(--chip);
+  background-size: cover;
+  background-position: center;
+  color: var(--faint);
+  cursor: pointer;
+  transition: border-color var(--ease) 0.2s;
+}
+
+.preview:hover {
+  border-color: var(--ink);
+}
+
+.dragging {
+  border-color: var(--ink);
+  border-style: solid;
+  background-color: var(--chipbd);
+}
+
+.previewEmpty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 0 10px;
+  font-size: 11px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.side {
+  display: flex;
+  flex-direction: column;
+}
+
+.photoActions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.fileInput {
+  display: none;
+}
+
+.field {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.label {
+  display: block;
+  margin-bottom: 9px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.input {
+  width: 100%;
+  padding: 9px 0;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+  font-size: 15px;
+  color: var(--ink);
+  outline: none;
+  transition: border-color var(--ease) 0.2s;
+}
+
+.input::placeholder {
+  color: var(--faint);
+}
+
+.input:focus {
+  border-bottom-color: var(--ink);
+}
+
+.error {
+  display: block;
+  margin-top: 6px;
+  font-size: 12px;
+  color: #d33;
+}
+
+.foot {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 8px;
+  padding: 18px 28px 26px;
+  border-top: 1px solid var(--line);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 18px;
+  border: 1px solid var(--ink);
+  border-radius: var(--r);
+  background-color: transparent;
+  color: var(--ink);
+  font-size: 13.5px;
+  font-weight: 500;
+  transition: background-color var(--ease) 0.22s, color var(--ease) 0.22s, border-color var(--ease) 0.22s, opacity var(--ease) 0.22s;
+}
+
+.btn svg {
+  width: 15px;
+  height: 15px;
+}
+
+.btn:hover {
+  background-color: var(--ink);
+  color: var(--paper);
+}
+
+.ghost {
+  border-color: var(--line);
+  color: var(--muted);
+}
+
+.ghost:hover {
+  background-color: transparent;
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.photoBtn {
+  padding: 8px 13px;
+  font-size: 12px;
+}
+
+.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+@media screen and (width <= 600px) {
+  .title {
+    font-size: 24px;
+  }
+
+  .head {
+    padding: 20px 20px 14px;
+  }
+
+  .body {
+    padding: 18px 20px 4px;
+  }
+
+  .foot {
+    padding: 14px 20px 20px;
+  }
+}

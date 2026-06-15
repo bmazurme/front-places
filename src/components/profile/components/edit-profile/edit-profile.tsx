@@ -5,34 +5,12 @@ import { useErrorHandler } from 'react-error-boundary';
 import Button from '../../../button';
 import InputField from '../../../input-field';
 
+import { inputs } from './inputs';
+
 type FormPayload = {
   name: string;
   about: string;
 };
-
-const inputs = [
-  {
-    name: 'name',
-    label: 'Name',
-    pattern: {
-      value: /^[\s+$.a-zA-Z0-9_-]{3,25}$/,
-      message: 'Name is invalid',
-    },
-    required: true,
-    autoComplete: 'current-name',
-  },
-  {
-    name: 'about',
-    label: 'About',
-    pattern: {
-      value: /^[\s+$.a-zA-Z0-9_-]{3,25}$/,
-      message: 'About is invalid',
-    },
-    required: true,
-    type: 'about',
-    autoComplete: 'current-about',
-  },
-];
 
 export default function EditProfile({ info, isLoading, onUpdateUser }
 : { info: User | null; isLoading: boolean; onUpdateUser: (data: FormPayload) => void; }) {
