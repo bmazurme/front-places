@@ -28,20 +28,14 @@ export default function UploadAvatarButton({ setEditor }: UploadButtonPropsType)
     const file = files[0];
     setName(file.name);
     setEditor(file);
-    // console.log(file.name);
 
     const formdata = new FormData();
     formdata.append('file', file, file.name);
 
     const result = await uploadFile(formdata); // !!! rew !!!
 
-    console.log(result);
-
-    // console.log(result);
-    // console.log((result as { data: { link: string } }).data?.link);
     setEditor((result as { data: { filename: string } }).data?.filename); // !!! rew !!!
     // eslint-disable-next-line no-alert
-    // alert(0);
   }, []);
 
   return (
