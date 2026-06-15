@@ -38,7 +38,13 @@ export default function PlusButton({ popup, setPopup }: PlusProps) {
         && (
           <Modal
             onClose={handleCloseAllPopups}
-            children={<AddCard isLoading={isLoading} onAddPlace={handleAddPlaceSubmit} />}
+            children={(
+              <AddCard
+                isLoading={isLoading}
+                onAddPlace={handleAddPlaceSubmit}
+                onClose={handleCloseAllPopups}
+              />
+            )}
           />
         )}
     </>
