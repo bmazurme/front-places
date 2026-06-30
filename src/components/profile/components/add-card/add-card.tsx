@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { useErrorHandler } from 'react-error-boundary';
+import { toast } from 'react-toastify';
 import classNames from 'classnames';
 import type { ChangeEvent, DragEvent } from 'react';
 
@@ -60,13 +61,29 @@ export default function AddCard({ isLoading, onAddPlace, onClose }: AddCardProps
       URL.revokeObjectURL(preview);
     }
 
-    setPreview(URL.createObjectURL(file));
+    const objectUrl = URL.createObjectURL(file);
+    setPreview(objectUrl);
 
     const formData = new FormData();
     formData.append('file', file, file.name);
 
-    const result = await uploadFile(formData);
-    setPhoto((result as { data: { filename: string } }).data?.filename ?? null);
+    const result = await uploadFile(formData) as { data?: { filename: string } };
+    const filename = result.data?.filename;
+
+    if (!filename) {
+      toast('Failed to upload photo. Check your connection and try again.', { type: 'error', position: 'top-right', autoClose: 5000 });
+      URL.revokeObjectURL(objectUrl);
+      setPreview(null);
+      setPhoto(null);
+
+      if (fileInputRef.current) {
+        fileInputRef.current.value = '';
+      }
+
+      return;
+    }
+
+    setPhoto(filename);
   };
 
   const handlePhotoChange = (e: ChangeEvent<HTMLInputElement>) => uploadPhoto(e.target.files?.[0]);
